@@ -19,20 +19,21 @@ const QuizState = ({ children }) => {
 
     const [questions, setQuestions] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
     // API ROUTE
     const BASE_URL = "https://opentdb.com/api.php?";
     const router = useRouter();
 
     // success and error messages
-    const errorToast = (message) => toast.error(message, {duration: 1000});
+    const errorToast = (message, duration=1000) => toast.error(message, {duration: duration});
     const successToast = (message) => toast.success(message, {duration: 1000});
 
     let url = "";
 
     const [quiz, setQuiz] = useState(
        {
-        amount: "5",
+        amount: "",
         category: "",
         difficulty:""
        }
@@ -42,6 +43,7 @@ const QuizState = ({ children }) => {
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
+        
         setQuiz({ ...quiz, [name]: value });
     };
     
@@ -49,14 +51,22 @@ const QuizState = ({ children }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const { amount, category, difficulty } = quiz;
+        const regex = /^[1-8]$/ 
 
         if(!amount || !category || !difficulty){
             errorToast("All fields must be selected");
         }
         else{
-            url = `${BASE_URL}amount=${amount}&difficulty=${difficulty}&category=${matchCategories[category]}&type=multiple`;
-            fetchData(url);
-            router.push("/quiz");
+            if(!regex.test(amount)){
+                setError(true);
+                errorToast("Number of questions (1-8 max)", 3400)
+            }
+            else{
+                url = `${BASE_URL}amount=${amount}&difficulty=${difficulty}&category=${matchCategories[category]}&type=multiple`;
+                fetchData(url);
+                router.push("/quiz");
+                setError(false)
+            }
 
         }
 
@@ -87,6 +97,8 @@ const QuizState = ({ children }) => {
         loading, 
         quiz,
         url,
+        error,
+        setError,
         errorToast,
         successToast,
         handleChange,

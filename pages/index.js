@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast';
 const Index = () => {
     
     // global states
-    const { quiz, handleChange, handleSubmit } = useContext(QuizContext);
+    const { quiz, handleChange, handleSubmit, error } = useContext(QuizContext);
 
 
     return (
@@ -39,13 +39,15 @@ const Index = () => {
                     }
                 </select>
                 <input 
+                    placeholder='Number of questions (1-8 max)'
+                    type="number"
                     min={1}
                     max={10}
                     name="amount"
                     value={quiz.amount}
                     onChange={handleChange}
-                    className='bg-gray-50 border border-gray-300 mb-4 text-gray-900 text-sm rounded-lg
-                    focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5'
+                    className={`bg-gray-50 border border-gray-300 mb-4 text-gray-900 text-sm rounded-lg
+                    focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5 ${error && 'border-2 border-red-500'}`}
                 />
             
 
