@@ -102,7 +102,7 @@ const Quiz = () => {
             {
               answers ? answers.map((answer, index) => {
                   return(
-                    <button onClick={() => verifyAnswer(correct_answer === answer)}  
+                    <button key={index} onClick={() => verifyAnswer(correct_answer === answer)}  
                         className='flex items-center max-w-screen-md mb-4 p-4 rounded-md 
                           border-none bg-white text-black w-[300px] lg:w-[500px] '>
                         <div class="flex items-center gap-5 cursor-pointer">
