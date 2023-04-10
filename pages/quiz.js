@@ -104,7 +104,7 @@ const Quiz = () => {
                   return(
                     <button key={index} onClick={() => verifyAnswer(correct_answer === answer)}  
                         className='flex items-center max-w-screen-md mb-4 p-4 rounded-md 
-                          border-none bg-white text-black w-[300px] lg:w-[500px] '>
+                          border-none bg-white text-black w-[315px] lg:w-[500px] '>
                         <div class="flex items-center gap-5 cursor-pointer">
                           <div className='flex justify-center w-[20px] h-[20px] border-2
                                border-blue-400 items-center rounded-full'>

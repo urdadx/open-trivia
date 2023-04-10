@@ -68,7 +68,7 @@ const QuizState = ({ children }) => {
                 setError(false)
             }
 
-        }
+        }               
 
     };
 

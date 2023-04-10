@@ -24,7 +24,7 @@ const Index = () => {
                     name="category"
                     value={quiz.category} 
                     onChange={handleChange}
-                    className='bg-gray-50 border border-gray-300 mb-4 text-gray-900 text-sm rounded-lg 
+                    className='bg-gray-50 border border-gray-300 h-auto mb-4 text-gray-900 text-sm rounded-lg 
                     focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5'
                 >
                     <option selected>Choose a category</option>
@@ -46,7 +46,7 @@ const Index = () => {
                     name="amount"
                     value={quiz.amount}
                     onChange={handleChange}
-                    className={`bg-gray-50 border border-gray-300 mb-4 text-gray-900 text-sm rounded-lg
+                    className={`bg-gray-50 border border-gray-300  mb-4 text-gray-900 text-sm rounded-lg
                     focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5 ${error && 'border-2 border-red-500'}`}
                 />
             
@@ -55,7 +55,7 @@ const Index = () => {
                     name="difficulty"
                     value={quiz.difficulty}
                     onChange={handleChange}
-                    className='bg-gray-50 border border-gray-300 mb-4 text-gray-900 text-sm rounded-lg
+                    className='bg-gray-50 border border-gray-300 mb-4 h-auto text-gray-900 text-sm rounded-lg
                     focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5'
                 >
                     <option selected >Select difficulty</option>
