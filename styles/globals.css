@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body{
+  background: #4776E6;
+  background: -webkit-linear-gradient(to left, #4776E6, #8E54E9 ); 
+  background: linear-gradient(to left, #4776E6, #8E54E9 );
+  overflow-y: hidden;
+}
+
