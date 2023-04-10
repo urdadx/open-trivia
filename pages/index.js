@@ -3,7 +3,7 @@ import { quizCategories, difficultyModes } from '@/utils/data';
 import QuizContext from '@/context/QuizContext';
 import { Toaster } from 'react-hot-toast';
 
-const index = () => {
+const Index = () => {
     
     // global states
     const { quiz, handleChange, handleSubmit } = useContext(QuizContext);
@@ -77,4 +77,4 @@ const index = () => {
   )
 }
 
-export default index;
+export default Index;

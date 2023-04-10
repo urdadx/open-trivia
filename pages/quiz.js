@@ -11,7 +11,7 @@ const randomizeOptions = (max) => {
   return Math.floor(Math.random() * Math.floor(max));
 };
 
-const quiz = () => {
+const Quiz = () => {
 
     // global states
     const { 
@@ -127,4 +127,4 @@ const quiz = () => {
   )
 }
 
-export default quiz;
+export default Quiz;
